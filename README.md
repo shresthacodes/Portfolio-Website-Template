@@ -109,4 +109,4 @@ If you have any questions or suggestions, please feel free to reach out.
 
 ---
 
-Made with ❤️ by Shrestha Raj
+Give it a star if you like it! Made with ❤️ by Shrestha Raj
