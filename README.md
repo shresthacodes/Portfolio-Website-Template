@@ -2,7 +2,8 @@
 
 A beautiful, responsive minimalistic portfolio website template built with React, TypeScript, and Tailwind CSS. 
 
-<img width="1440" alt="Screenshot 2025-01-29 at 11 39 56 PM" src="https://github.com/user-attachments/assets/9ef1a3db-a07d-4a91-baa0-a1b3fb7ba8db" />
+https://github.com/user-attachments/assets/51d4cb99-8853-4c02-babe-8e669eefcf11
+
 
 
 ## 🚀 Quick Start
