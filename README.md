@@ -1,12 +1,14 @@
 # Modern Portfolio Website Template
 
-A beautiful, responsive portfolio website template built with React, TypeScript, and Tailwind CSS. This template features a modern design with smooth animations, dark/light sections, and comprehensive sections to showcase your professional journey.
+A beautiful, responsive minimalistic portfolio website template built with React, TypeScript, and Tailwind CSS. 
 
-![Portfolio Preview](https://source.unsplash.com/random/1200x630?portfolio&sig=1)
+<img width="1440" alt="Screenshot 2025-01-29 at 11 39 56 PM" src="https://github.com/user-attachments/assets/9ef1a3db-a07d-4a91-baa0-a1b3fb7ba8db" />
+
 
 ## 🚀 Quick Start
 
-1. Fork this repository
+
+1. Clone this repository
 
 ```bash
 git clone https://github.com/shresthacodes/Portfolio-Website-Template
