@@ -75,20 +75,7 @@ Edit the following sections in `src/App.tsx`:
 - GitHub
 - Twitter
 - LinkedIn
-- Email
-
-### Styling
-
-1. **Colors**:
-
-- Primary colors can be modified in the Tailwind classes (currently using `[#02010e]` and `[#d8ff00]`)
-- Background patterns and gradients can be adjusted in the respective component styles
-
-2. **Animations**:
-   Custom animations are defined in `tailwind.config.js` (Lines 6-19)
-
-3. **CSS Utilities**:
-   Additional custom styles are available in `src/index.css`
+- Youtube
 
 ## 📁 Project Structure
 
