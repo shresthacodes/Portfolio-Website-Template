@@ -57,9 +57,11 @@ Edit the following sections in `src/App.tsx`:
 
 5. **Projects** (Lines 243-266):
 
-- Project titles
-- Descriptions
-- Images
+- Title
+- Description
+- Image URL
+- Demo link
+- Code repository link
 
 6. **Contact Information** (Lines 502-505):
 

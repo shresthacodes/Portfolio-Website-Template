@@ -9,6 +9,7 @@ import {
   Briefcase,
   Menu,
   X,
+  Youtube,
 } from "lucide-react";
 
 function App() {
@@ -98,11 +99,11 @@ function App() {
         id="home"
         className="min-h-screen flex items-center justify-center relative pt-16 px-4 sm:px-6 lg:px-8"
       >
-        <div className="max-w-7xl mx-auto py-12 sm:py-20 flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12">
+        <div className="max-w-7xl mx-auto py-12 sm:py-20 flex flex-col-reverse md:flex-row items-center justify-between gap-4 md:gap-6">
           {/* Left Content */}
           <div className="w-full md:w-1/2 text-center md:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#02010e] mb-4 sm:mb-6">
-              John Doe
+              Gojo Saturo
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8">
               Full Stack Developer & Designer
@@ -133,10 +134,10 @@ function App() {
           {/* Right Profile Image */}
           <div className="w-full md:w-1/2 flex justify-center md:justify-end">
             <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-96 lg:h-96">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#02010e] to-[#d8ff00] opacity-10 blur-2xl animate-pulse"></div>
-              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-[#02010e]/10">
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#000000] to-[#d8ff00] opacity-10 blur-2xl animate-pulse"></div>
+              <div className="relative w-full h-full rounded-2xl overflow-hidden border-4">
                 <img
-                  src="https://source.unsplash.com/random/800x800?portrait&sig=1"
+                  src="./images/image.png"
                   alt="Profile"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
@@ -240,27 +241,66 @@ function App() {
             Projects
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {[1, 2, 3].map((project) => (
+            {[
+              {
+                title: "Project Title 1",
+                description:
+                  "A modern e-commerce platform built with React and Node.js",
+                image: "./images/project1.png",
+                demoLink: "https://demo1.example.com",
+                codeLink: "https://github.com/example/project1",
+              },
+              {
+                title: "Project Title 2",
+                description:
+                  "Real-time chat application using WebSocket and MongoDB",
+                image: "./images/project2.png",
+                demoLink: "https://demo2.example.com",
+                codeLink: "https://github.com/example/project2",
+              },
+              {
+                title: "Project Title 3",
+                description:
+                  "AI-powered task management system with Python backend",
+                image: "./images/project3.png",
+                demoLink: "https://demo3.example.com",
+                codeLink: "https://github.com/example/project3",
+              },
+            ].map((project, index) => (
               <div
-                key={project}
+                key={index}
                 className="group relative bg-white/80 p-4 sm:p-6 rounded-lg 
                 hover:shadow-xl transition-all duration-500 transform 
                 hover:-translate-y-2 animate-slide-up"
-                style={{ animationDelay: `${project * 200}ms` }}
+                style={{ animationDelay: `${(index + 1) * 200}ms` }}
               >
                 <div className="aspect-video mb-4 bg-gray-200 rounded-lg overflow-hidden">
                   <img
-                    src={`https://source.unsplash.com/random/800x600?tech&sig=${project}`}
-                    alt={`Project ${project}`}
+                    src={project.image}
+                    alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold mb-2 text-[#02010e]">
-                  Project Title {project}
+                  {project.title}
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600">
-                  A brief description of the project and the technologies used.
+                <p className="text-sm sm:text-base text-gray-600 mb-4">
+                  {project.description}
                 </p>
+                <div className="flex gap-4">
+                  <a
+                    href={project.demoLink}
+                    className="px-4 py-2 bg-[#02010e] text-white rounded-lg hover:bg-[#02010e]/90 transition-colors text-sm"
+                  >
+                    Live Demo
+                  </a>
+                  <a
+                    href={project.codeLink}
+                    className="px-4 py-2 border border-[#02010e] text-[#02010e] rounded-lg hover:bg-[#02010e] hover:text-white transition-colors text-sm"
+                  >
+                    View Code
+                  </a>
+                </div>
               </div>
             ))}
           </div>
@@ -427,35 +467,59 @@ function App() {
             Blogs
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {[1, 2, 3].map((post) => (
+            {[
+              {
+                title: "Getting Started with React and TypeScript",
+                description: "Learn how to set up a new React project with TypeScript and understand the basics of type safety in your components...",
+                image: "https://img.freepik.com/free-photo/high-angle-people-applauding-work_23-2149636269.jpg?t=st=1738172031~exp=1738175631~hmac=d9be8329e53ba91d98a8acf81a44a49062eaad14fade92420fc149cf75324b29",
+                date: "Mar 1, 2024",
+                link: "https://blog.example.com/react-typescript"
+              },
+              {
+                title: "Modern Web Design Trends in 2024",
+                description: "Explore the latest web design trends including glassmorphism, micro-interactions, and dark mode implementations...",
+                image: "https://img.freepik.com/free-photo/side-view-woman-with-laptop-home_52683-136388.jpg?ga=GA1.1.203139970.1733375084&semt=ais_hybrid",
+                date: "Mar 2, 2024",
+                link: "https://blog.example.com/web-design-trends"
+              },
+              {
+                title: "Optimizing Website Performance",
+                description: "Discover techniques and best practices for improving your website's loading speed and overall performance...",
+                image: "https://img.freepik.com/free-photo/colleagues-working-together-project_23-2149286162.jpg?t=st=1738172031~exp=1738175631~hmac=718172717695c2ec538258c7f92ec44c6208ca9034c0b04e40cb6636b14e615f",
+                date: "Mar 3, 2024",
+                link: "https://blog.example.com/web-optimization"
+              }
+            ].map((post, index) => (
               <div
-                key={post}
+                key={index}
                 className="bg-transparent border border-white/20 rounded-lg overflow-hidden 
                 hover:bg-white/10 hover:border-white/40 
                 transition-all duration-300 animate-slide-up"
-                style={{ animationDelay: `${post * 200}ms` }}
+                style={{ animationDelay: `${(index + 1) * 200}ms` }}
               >
                 <div className="h-48 sm:h-56 overflow-hidden">
                   <img
-                    src={`https://source.unsplash.com/random/800x800?writing&sig=${post}`}
-                    alt={`Blog post ${post}`}
-                    className="w-full h-full object-cover"
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-4 sm:p-6">
                   <span className="text-[#d8ff00] text-sm">
-                    Mar {post}, 2024
+                    {post.date}
                   </span>
                   <h3 className="text-lg sm:text-xl font-semibold text-white mt-2 mb-2 line-clamp-2">
-                    Blog Post Title {post}
+                    {post.title}
                   </h3>
                   <p className="text-gray-400 text-sm sm:text-base line-clamp-2 mb-4">
-                    A brief preview of the blog post content that might span
-                    multiple lines...
+                    {post.description}
                   </p>
-                  <button className="mt-auto text-[#d8ff00] hover:text-[#d8ff00]/80 transition-colors text-sm sm:text-base">
+                  <a 
+                    href={post.link}
+                    className="mt-auto text-[#d8ff00] hover:text-[#d8ff00]/80 transition-colors text-sm sm:text-base inline-block"
+                  >
                     Read More →
-                  </button>
+                  </a>
                 </div>
               </div>
             ))}
@@ -473,7 +537,7 @@ function App() {
             <div className="aspect-video bg-transparent border border-white/20 rounded-lg overflow-hidden">
               <iframe
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/your-video-id"
+                src="https://www.youtube.com/embed/CARcWG8XoCY"
                 title="Video Resume"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -525,13 +589,13 @@ function App() {
                 },
                 {
                   Icon: Linkedin,
-                  link: "https://www.linkedin.com/in/yourusername",
+                  link: "https://www.linkedin.com/in/shresthaaraj",
                   label: "LinkedIn",
                 },
                 {
-                  Icon: Mail,
-                  link: "mailto:abc@gmail.com",
-                  label: "Email",
+                  Icon: Youtube ,
+                  link: "https://www.youtube.com/username090",
+                  label: "Youtube",
                 },
               ].map(({ Icon, link, label }, index) => (
                 <a
@@ -547,7 +611,7 @@ function App() {
               ))}
             </div>
             <p className="text-gray-400 text-sm text-center mt-4">
-              © {new Date().getFullYear()} John Doe. All rights reserved.
+              © {new Date().getFullYear()} Gojo Saturo. All rights reserved.
             </p>
           </div>
         </div>
