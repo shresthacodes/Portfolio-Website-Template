@@ -4,19 +4,6 @@ A beautiful, responsive portfolio website template built with React, TypeScript,
 
 ![Portfolio Preview](https://source.unsplash.com/random/1200x630?portfolio&sig=1)
 
-## 🌟 Features
-
-- 📱 Fully responsive design
-- 🎨 Modern UI with smooth animations
-- 🌓 Mixed light/dark sections
-- 🎯 Smooth scrolling navigation
-- 🖼️ Dynamic project showcase
-- 📝 Blog section
-- 📊 Skills visualization
-- 📜 Education & Experience timeline
-- 🎥 Video resume section
-- 📱 Social media integration
-
 ## 🚀 Quick Start
 
 1. Fork this repository
