@@ -41,7 +41,7 @@ function App() {
             <div className="hidden md:flex space-x-8">
               {[
                 "Home",
-                "Education",
+                "Education", 
                 "Experience",
                 "Projects",
                 "Skills",
@@ -74,7 +74,7 @@ function App() {
                 {[
                   "Home",
                   "Education",
-                  "Experience",
+                  "Experience", 
                   "Projects",
                   "Skills",
                   "Blog",
@@ -137,7 +137,7 @@ function App() {
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#000000] to-[#d8ff00] opacity-10 blur-2xl animate-pulse"></div>
               <div className="relative w-full h-full rounded-2xl overflow-hidden border-4">
                 <img
-                  src="./images/image.png"
+                  src="/images/image.png"
                   alt="Profile"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
@@ -246,7 +246,7 @@ function App() {
                 title: "Project Title 1",
                 description:
                   "A modern e-commerce platform built with React and Node.js",
-                image: "./images/project1.png",
+                image: "/images/project1.png",
                 demoLink: "https://demo1.example.com",
                 codeLink: "https://github.com/example/project1",
               },
@@ -254,7 +254,7 @@ function App() {
                 title: "Project Title 2",
                 description:
                   "Real-time chat application using WebSocket and MongoDB",
-                image: "./images/project2.png",
+                image: "/images/project2.png",
                 demoLink: "https://demo2.example.com",
                 codeLink: "https://github.com/example/project2",
               },
@@ -262,7 +262,7 @@ function App() {
                 title: "Project Title 3",
                 description:
                   "AI-powered task management system with Python backend",
-                image: "./images/project3.png",
+                image: "/images/project3.png",
                 demoLink: "https://demo3.example.com",
                 codeLink: "https://github.com/example/project3",
               },
@@ -290,12 +290,16 @@ function App() {
                 <div className="flex gap-4">
                   <a
                     href={project.demoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="px-4 py-2 bg-[#02010e] text-white rounded-lg hover:bg-[#02010e]/90 transition-colors text-sm"
                   >
                     Live Demo
                   </a>
                   <a
                     href={project.codeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="px-4 py-2 border border-[#02010e] text-[#02010e] rounded-lg hover:bg-[#02010e] hover:text-white transition-colors text-sm"
                   >
                     View Code
@@ -516,6 +520,8 @@ function App() {
                   </p>
                   <a 
                     href={post.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="mt-auto text-[#d8ff00] hover:text-[#d8ff00]/80 transition-colors text-sm sm:text-base inline-block"
                   >
                     Read More →
@@ -553,6 +559,7 @@ function App() {
           </div>
         </div>
       </section>
+
       {/* Contact Section */}
       <section
         id="contact"
@@ -593,7 +600,7 @@ function App() {
                   label: "LinkedIn",
                 },
                 {
-                  Icon: Youtube ,
+                  Icon: Youtube,
                   link: "https://www.youtube.com/username090",
                   label: "Youtube",
                 },
