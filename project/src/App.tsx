@@ -96,33 +96,58 @@ function App() {
       {/* Hero Section */}
       <section
         id="home"
-        className="min-h-screen flex items-center justify-center relative pt-16"
+        className="min-h-screen flex items-center justify-center relative pt-16 px-4 sm:px-6 lg:px-8"
       >
-        <div className="max-w-4xl mx-auto px-4 py-20 text-center">
-          <div className="mb-6 flex justify-center"></div>
-          <h1 className="text-6xl font-bold text-[#02010e] mb-6">John Doe</h1>
-          <p className="text-xl text-gray-600 mb-8">
-            Full Stack Developer & Designer
-          </p>
-          <p className="text-gray-600 mb-8">
-            I'm a passionate full-stack developer with 5+ years of experience in
-            building scalable web applications. I specialize in React, Node.js,
-            and cloud technologies, focusing on creating elegant solutions for
-            complex problems.
-          </p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <button className="px-6 py-3 bg-[#02010e] text-white rounded-lg hover:bg-[#02010e]/90 transition-colors">
-              Get in Touch
-            </button>
-            <button className="px-6 py-3 border-2 border-[#02010e] text-[#02010e] rounded-lg hover:bg-[#02010e]/10 transition-colors">
-              View Resume
-            </button>
+        <div className="max-w-7xl mx-auto py-12 sm:py-20 flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12">
+          {/* Left Content */}
+          <div className="w-full md:w-1/2 text-center md:text-left">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#02010e] mb-4 sm:mb-6">
+              John Doe
+            </h1>
+            <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8">
+              Full Stack Developer & Designer
+            </p>
+            <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
+              I'm a passionate full-stack developer with 5+ years of experience
+              in building scalable web applications. I specialize in React,
+              Node.js, and cloud technologies.
+            </p>
+            <div className="flex flex-row justify-center md:justify-start gap-4">
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="px-4 sm:px-6 py-2 sm:py-3 bg-[#02010e] text-white rounded-lg hover:bg-[#02010e]/90 transition-colors text-sm sm:text-base"
+              >
+                Get in Touch
+              </button>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 sm:px-6 py-2 sm:py-3 border-2 border-[#02010e] text-[#02010e] rounded-lg hover:bg-[#02010e]/10 transition-colors text-center text-sm sm:text-base"
+              >
+                View Resume
+              </a>
+            </div>
+          </div>
+
+          {/* Right Profile Image */}
+          <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+            <div className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-96 lg:h-96">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#02010e] to-[#d8ff00] opacity-10 blur-2xl animate-pulse"></div>
+              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-[#02010e]/10">
+                <img
+                  src="https://source.unsplash.com/random/800x800?portrait&sig=1"
+                  alt="Profile"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-18">
+      <section id="education" className="py-20">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16 text-[#02010e]">
             Education
@@ -144,7 +169,7 @@ function App() {
             ].map((edu, index) => (
               <div
                 key={index}
-                className="flex items-start gap-4 p-6 bg-white/80 rounded-lg shadow-lg hover:shadow-md transition-shadow  backdrop-blur-lg "
+                className="flex items-start gap-4 p-6 bg-white/80 rounded-lg shadow-lg hover:shadow-md transition-shadow backdrop-blur-lg"
               >
                 <div className="p-3 bg-[#02010e] rounded-full">
                   <GraduationCap className="text-white" size={24} />
@@ -164,7 +189,7 @@ function App() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 bg-white/50">
+      <section id="experience" className="py-20">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16 text-[#02010e]">
             Experience
@@ -186,7 +211,7 @@ function App() {
             ].map((exp, index) => (
               <div
                 key={index}
-                className="flex items-start gap-4 p-6 bg-white/80 rounded-lg shadow-lg hover:shadow-md transition-shadow  backdrop-blur-sm"
+                className="flex items-start gap-4 p-6 bg-white/80 rounded-lg shadow-lg hover:shadow-md transition-shadow backdrop-blur-sm"
               >
                 <div className="p-3 bg-[#02010e] rounded-full">
                   <Briefcase className="text-white" size={24} />
@@ -206,28 +231,34 @@ function App() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-[#02010e]">
+      <section
+        id="projects"
+        className="py-12 sm:py-20 animate-slide-up px-4 sm:px-6 lg:px-8"
+      >
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-16 text-[#02010e]">
             Projects
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[1, 2, 3].map((project) => (
               <div
                 key={project}
-                className="group relative bg-white/80 p-6 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 backdrop-blur-sm hover:backdrop-blur-md"
+                className="group relative bg-white/80 p-4 sm:p-6 rounded-lg 
+                hover:shadow-xl transition-all duration-500 transform 
+                hover:-translate-y-2 animate-slide-up"
+                style={{ animationDelay: `${project * 200}ms` }}
               >
                 <div className="aspect-video mb-4 bg-gray-200 rounded-lg overflow-hidden">
                   <img
                     src={`https://source.unsplash.com/random/800x600?tech&sig=${project}`}
                     alt={`Project ${project}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-[#02010e]">
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 text-[#02010e]">
                   Project Title {project}
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-sm sm:text-base text-gray-600">
                   A brief description of the project and the technologies used.
                 </p>
               </div>
@@ -239,13 +270,13 @@ function App() {
       {/* Skills Section */}
       <section
         id="skills"
-        className="py-20 bg-[#02010e] rounded-t-[50px] scroll-mt-16"
+        className="py-20 bg-black/95 rounded-t-[50px] scroll-mt-16 animate-slide-up"
       >
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16 text-white">
             Skills
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
             {[
               "JavaScript",
               "TypeScript",
@@ -255,12 +286,131 @@ function App() {
               "AWS",
               "Docker",
               "GraphQL",
-            ].map((skill) => (
+              "MongoDB",
+              "Redis",
+              "Git",
+              "REST API",
+            ].map((skill, index) => (
               <div
                 key={skill}
-                className="p-6 bg-white/10 rounded-lg text-center hover:bg-white/20 transition-colors"
+                className="group p-3 sm:p-4 bg-transparent border border-white/20 rounded-lg text-center 
+                hover:bg-white/10 transition-all duration-300 transform hover:scale-105 
+                hover:border-white/40 cursor-pointer animate-slide-up"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <span className="text-[#fbfdf2] font-medium">{skill}</span>
+                <span
+                  className="text-[#fbfdf2] font-medium text-xs sm:text-sm 
+                group-hover:text-[#d8ff00] transition-colors"
+                >
+                  {skill}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section className="py-12 sm:py-20 bg-black/95 animate-slide-up px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-16 text-white">
+            Certifications
+          </h2>
+          <div className="space-y-0">
+            {[
+              {
+                title: "AWS Solutions Architect",
+                issuer: "Amazon Web Services",
+                date: "2023",
+                credential: "Credential ID: AWS-123456",
+              },
+              {
+                title: "Google Analytics Expert",
+                issuer: "Google",
+                date: "2023",
+                credential: "Credential ID: GA-789012",
+              },
+              {
+                title: "Meta Marketing Professional",
+                issuer: "Meta",
+                date: "2022",
+                credential: "Credential ID: META-345678",
+              },
+            ].map((cert, index) => (
+              <div
+                key={index}
+                className="border-y border-white/20 py-3 hover:bg-white/5 transition-colors"
+              >
+                <div className="max-w-3xl mx-auto">
+                  <div className="flex flex-row justify-between items-center">
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">
+                        {cert.title}
+                      </h3>
+                      <div className="flex items-center gap-2 mt-1">
+                        <p className="text-gray-400 text-sm">{cert.issuer}</p>
+                        <span className="text-gray-500 text-xs">•</span>
+                        <p className="text-gray-500 text-xs">
+                          {cert.credential}
+                        </p>
+                      </div>
+                    </div>
+                    <span className="text-[#d8ff00] text-sm font-medium">
+                      {cert.date}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-12 sm:py-20 bg-black/95 animate-slide-up px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-16 text-white">
+            Services
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {[
+              {
+                title: "Digital Marketing",
+                description:
+                  "Strategic social media management, SEO optimization, and targeted advertising campaigns.",
+                icon: "📱",
+              },
+              {
+                title: "Website Design",
+                description:
+                  "Custom responsive websites with modern UI/UX principles and seamless functionality.",
+                icon: "💻",
+              },
+              {
+                title: "Copy Writing",
+                description:
+                  "Engaging content creation, brand storytelling, and SEO-optimized writing.",
+                icon: "✍️",
+              },
+              {
+                title: "Video Editing",
+                description:
+                  "Professional video editing, motion graphics, and visual storytelling.",
+                icon: "🎥",
+              },
+            ].map((service, index) => (
+              <div
+                key={index}
+                className="group bg-transparent border border-white/20 rounded-lg p-6 
+                hover:bg-white/10 hover:border-white/40 transition-all duration-300 
+                animate-slide-up"
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold text-[#d8ff00] mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-gray-400 text-sm">{service.description}</p>
               </div>
             ))}
           </div>
@@ -268,36 +418,42 @@ function App() {
       </section>
 
       {/* Blog Section */}
-      <section id="blog" className="py-20 bg-black/95 scroll-mt-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-white">
-            Blog
+      <section
+        id="blog"
+        className="py-12 sm:py-20 bg-black/95 scroll-mt-16 animate-slide-up px-4 sm:px-6 lg:px-8"
+      >
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-16 text-white">
+            Blogs
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[1, 2, 3].map((post) => (
               <div
                 key={post}
-                className="aspect-square bg-transparent border border-white/10 rounded-lg overflow-hidden hover:border-white/20 transition-colors"
+                className="bg-transparent border border-white/20 rounded-lg overflow-hidden 
+                hover:bg-white/10 hover:border-white/40 
+                transition-all duration-300 animate-slide-up"
+                style={{ animationDelay: `${post * 200}ms` }}
               >
-                <div className="h-1/2 overflow-hidden">
+                <div className="h-48 sm:h-56 overflow-hidden">
                   <img
                     src={`https://source.unsplash.com/random/800x800?writing&sig=${post}`}
                     alt={`Blog post ${post}`}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-6 h-1/2 flex flex-col">
+                <div className="p-4 sm:p-6">
                   <span className="text-[#d8ff00] text-sm">
                     Mar {post}, 2024
                   </span>
-                  <h3 className="text-xl font-semibold text-white mt-2 mb-2 line-clamp-2">
+                  <h3 className="text-lg sm:text-xl font-semibold text-white mt-2 mb-2 line-clamp-2">
                     Blog Post Title {post}
                   </h3>
-                  <p className="text-gray-400 text-sm line-clamp-2 mb-4">
+                  <p className="text-gray-400 text-sm sm:text-base line-clamp-2 mb-4">
                     A brief preview of the blog post content that might span
                     multiple lines...
                   </p>
-                  <button className="mt-auto text-[#d8ff00] hover:text-[#d8ff00]/80 transition-colors text-sm">
+                  <button className="mt-auto text-[#d8ff00] hover:text-[#d8ff00]/80 transition-colors text-sm sm:text-base">
                     Read More →
                   </button>
                 </div>
@@ -307,42 +463,93 @@ function App() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-black scroll-mt-16">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-16 text-white">Get in Touch</h2>
-          <a href="mailto:abc@gmail.com">
-            <button className="px-8 py-4 bg-[#d8ff00] text-black text-xl font-bold rounded-lg hover:bg-[#d8ff00]/90 transition-colors">
-              abc@gmail.com
-            </button>
-          </a>
-          <div className="mt-12 flex justify-center space-x-6">
-            {[
-              { Icon: Github, link: "https://github.com/shresthacodes" },
-              { Icon: Twitter, link: "https://twitter.com/theshrestharaj" },
-              {
-                Icon: Linkedin,
-                link: "https://www.linkedin.com/in/yourusername",
-              },
-            ].map(({ Icon, link }, index) => (
-              <a
-                key={index}
-                href={link}
-                target="_blank" // Opens in a new tab
-                rel="noopener noreferrer" // Security for opening new tabs
-                className="text-gray-200 hover:text-white transition-colors"
-              >
-                <Icon size={24} />
-              </a>
-            ))}
+      {/* Video Resume Section */}
+      <section className="py-12 sm:py-20 bg-black/95 animate-slide-up px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-16 text-white">
+            Video Resume
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <div className="aspect-video bg-transparent border border-white/20 rounded-lg overflow-hidden">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/your-video-id"
+                title="Video Resume"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <div className="mt-6 text-center">
+              <p className="text-gray-400 text-sm sm:text-base">
+                Watch my video resume to learn more about my journey, skills,
+                and passion for technology.
+              </p>
+            </div>
           </div>
+        </div>
+      </section>
+      {/* Contact Section */}
+      <section
+        id="contact"
+        className="py-12 sm:py-20 bg-black scroll-mt-16 animate-slide-up px-4 sm:px-6 lg:px-8"
+      >
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-16 text-white">
+            Get in Touch
+          </h2>
+          <a
+            href="mailto:abc@gmail.com"
+            className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-[#d8ff00] text-black text-lg sm:text-xl font-bold rounded-lg hover:bg-[#d8ff00]/90 transition-colors"
+          >
+            abc@gmail.com
+          </a>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 bg-black">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-gray-200">© 2024 John Doe. All rights reserved.</p>
+      <footer className="py-8 bg-black border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex flex-col items-center justify-center space-y-4">
+            <div className="flex justify-center space-x-6">
+              {[
+                {
+                  Icon: Github,
+                  link: "https://github.com/shresthacodes",
+                  label: "GitHub",
+                },
+                {
+                  Icon: Twitter,
+                  link: "https://twitter.com/theshrestharaj",
+                  label: "Twitter",
+                },
+                {
+                  Icon: Linkedin,
+                  link: "https://www.linkedin.com/in/yourusername",
+                  label: "LinkedIn",
+                },
+                {
+                  Icon: Mail,
+                  link: "mailto:abc@gmail.com",
+                  label: "Email",
+                },
+              ].map(({ Icon, link, label }, index) => (
+                <a
+                  key={index}
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#d8ff00] transition-colors"
+                  aria-label={label}
+                >
+                  <Icon size={20} />
+                </a>
+              ))}
+            </div>
+            <p className="text-gray-400 text-sm text-center mt-4">
+              © {new Date().getFullYear()} John Doe. All rights reserved.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
