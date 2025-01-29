@@ -41,7 +41,7 @@ function App() {
             <div className="hidden md:flex space-x-8">
               {[
                 "Home",
-                "Education", 
+                "Education",
                 "Experience",
                 "Projects",
                 "Skills",
@@ -74,7 +74,7 @@ function App() {
                 {[
                   "Home",
                   "Education",
-                  "Experience", 
+                  "Experience",
                   "Projects",
                   "Skills",
                   "Blog",
@@ -137,7 +137,7 @@ function App() {
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#000000] to-[#d8ff00] opacity-10 blur-2xl animate-pulse"></div>
               <div className="relative w-full h-full rounded-2xl overflow-hidden border-4">
                 <img
-                  src="/images/image.png"
+                  src="images/image.png"
                   alt="Profile"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
@@ -246,7 +246,7 @@ function App() {
                 title: "Project Title 1",
                 description:
                   "A modern e-commerce platform built with React and Node.js",
-                image: "/images/project1.png",
+                image: "images/project1.png",
                 demoLink: "https://demo1.example.com",
                 codeLink: "https://github.com/example/project1",
               },
@@ -254,7 +254,7 @@ function App() {
                 title: "Project Title 2",
                 description:
                   "Real-time chat application using WebSocket and MongoDB",
-                image: "/images/project2.png",
+                image: "images/project2.png",
                 demoLink: "https://demo2.example.com",
                 codeLink: "https://github.com/example/project2",
               },
@@ -262,7 +262,7 @@ function App() {
                 title: "Project Title 3",
                 description:
                   "AI-powered task management system with Python backend",
-                image: "/images/project3.png",
+                image: "images/project3.png",
                 demoLink: "https://demo3.example.com",
                 codeLink: "https://github.com/example/project3",
               },
@@ -474,25 +474,31 @@ function App() {
             {[
               {
                 title: "Getting Started with React and TypeScript",
-                description: "Learn how to set up a new React project with TypeScript and understand the basics of type safety in your components...",
-                image: "https://img.freepik.com/free-photo/high-angle-people-applauding-work_23-2149636269.jpg?t=st=1738172031~exp=1738175631~hmac=d9be8329e53ba91d98a8acf81a44a49062eaad14fade92420fc149cf75324b29",
+                description:
+                  "Learn how to set up a new React project with TypeScript and understand the basics of type safety in your components...",
+                image:
+                  "https://img.freepik.com/free-photo/high-angle-people-applauding-work_23-2149636269.jpg?t=st=1738172031~exp=1738175631~hmac=d9be8329e53ba91d98a8acf81a44a49062eaad14fade92420fc149cf75324b29",
                 date: "Mar 1, 2024",
-                link: "https://blog.example.com/react-typescript"
+                link: "https://blog.example.com/react-typescript",
               },
               {
                 title: "Modern Web Design Trends in 2024",
-                description: "Explore the latest web design trends including glassmorphism, micro-interactions, and dark mode implementations...",
-                image: "https://img.freepik.com/free-photo/side-view-woman-with-laptop-home_52683-136388.jpg?ga=GA1.1.203139970.1733375084&semt=ais_hybrid",
+                description:
+                  "Explore the latest web design trends including glassmorphism, micro-interactions, and dark mode implementations...",
+                image:
+                  "https://img.freepik.com/free-photo/side-view-woman-with-laptop-home_52683-136388.jpg?ga=GA1.1.203139970.1733375084&semt=ais_hybrid",
                 date: "Mar 2, 2024",
-                link: "https://blog.example.com/web-design-trends"
+                link: "https://blog.example.com/web-design-trends",
               },
               {
                 title: "Optimizing Website Performance",
-                description: "Discover techniques and best practices for improving your website's loading speed and overall performance...",
-                image: "https://img.freepik.com/free-photo/colleagues-working-together-project_23-2149286162.jpg?t=st=1738172031~exp=1738175631~hmac=718172717695c2ec538258c7f92ec44c6208ca9034c0b04e40cb6636b14e615f",
+                description:
+                  "Discover techniques and best practices for improving your website's loading speed and overall performance...",
+                image:
+                  "https://img.freepik.com/free-photo/colleagues-working-together-project_23-2149286162.jpg?t=st=1738172031~exp=1738175631~hmac=718172717695c2ec538258c7f92ec44c6208ca9034c0b04e40cb6636b14e615f",
                 date: "Mar 3, 2024",
-                link: "https://blog.example.com/web-optimization"
-              }
+                link: "https://blog.example.com/web-optimization",
+              },
             ].map((post, index) => (
               <div
                 key={index}
@@ -509,16 +515,14 @@ function App() {
                   />
                 </div>
                 <div className="p-4 sm:p-6">
-                  <span className="text-[#d8ff00] text-sm">
-                    {post.date}
-                  </span>
+                  <span className="text-[#d8ff00] text-sm">{post.date}</span>
                   <h3 className="text-lg sm:text-xl font-semibold text-white mt-2 mb-2 line-clamp-2">
                     {post.title}
                   </h3>
                   <p className="text-gray-400 text-sm sm:text-base line-clamp-2 mb-4">
                     {post.description}
                   </p>
-                  <a 
+                  <a
                     href={post.link}
                     target="_blank"
                     rel="noopener noreferrer"
